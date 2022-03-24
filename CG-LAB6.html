@@ -24,10 +24,10 @@ var SCREEN_SIZE = 100;		// The size of the coordinate axis, X, Y = [0 SCREEN_SIZ
 		var verticesData = [];		// The array holds the x,y of all the data points to be drawn on the screen.
 		var x_center = 50, y_center = 50;
 		var rad = 32;
-		var x = rad, y = 0;
+		var x = 0, y = rad;
 		var dP = 1.25 - rad;
 
-		for (var y = 0; y <= rad; y++) {
+		for (var x = 0; x<= rad; x++) {
 
 			verticesData.push(Math.floor(x + x_center));
 			verticesData.push(Math.floor(y + y_center));
@@ -57,14 +57,14 @@ var SCREEN_SIZE = 100;		// The size of the coordinate axis, X, Y = [0 SCREEN_SIZ
 
 
 
-			y = y + 1;
+			x = x + 1;
 
 			if (dP < 0) {
-				x = x;
+				y = y;
 				dP = dP + 2 * y + 3;
 			}
 			else {
-				x--;
+				y--;
 				dP = dP - 2 * x + 2 * y + 5;
 			}
 
